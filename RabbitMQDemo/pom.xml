@@ -2,47 +2,52 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>springboot</groupId>
-  <artifactId>activeMQ</artifactId>
+  <artifactId>RabbitMQDemo</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>activeMQ</name>
+  <name>RabbitMQDemo</name>
+  <!--  springboot需要依赖parent-->
 	<parent>  
         <groupId>org.springframework.boot</groupId>  
         <artifactId>spring-boot-starter-parent</artifactId>  
         <version>1.4.2.RELEASE</version>  
         <relativePath/> 
-	</parent>  
-  
-    <properties>  
+	</parent>
+	<properties>  
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
-        <java.version>1.7</java.version>  
-    </properties>  
-  
-  <dependencies>  
-        <dependency>  
+        <java.version>1.8</java.version>  
+    </properties>
+  <dependencies>
+  		<dependency>  
             <groupId>org.springframework.boot</groupId>  
             <artifactId>spring-boot-starter-web</artifactId>  
-        </dependency>  
-   
-        <dependency>  
-            <groupId>org.springframework.boot</groupId>  
-            <artifactId>spring-boot-starter-activemq</artifactId>  
-        </dependency>  
-  
+        </dependency>
         <dependency>  
             <groupId>org.springframework.boot</groupId>  
             <artifactId>spring-boot-starter-test</artifactId>  
             <scope>test</scope>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.apache.activemq</groupId>  
-            <artifactId>activemq-pool</artifactId>  
-            <version>5.7.0</version>  
-        </dependency>  
-    </dependencies>  
-  
-    <build>  
+        </dependency> 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency> 
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>fastjson</artifactId>
+		    <version>1.2.31</version>
+		</dependency>
+
+        
+    <!-- <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency> -->
+  </dependencies>
+  <build>  
         <plugins>  
             <plugin>  
                 <groupId>org.springframework.boot</groupId>  
@@ -50,4 +55,4 @@
             </plugin>  
         </plugins>  
     </build>  
-</project>  
+</project>
